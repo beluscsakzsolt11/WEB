@@ -1,0 +1,28 @@
+div.box1
+{
+    color:rgb(0, 0, 0);
+    border: black 5px;
+    background: red ;
+    float: left;
+    width: 200px;
+    height: 200px;
+    transition: .1s;
+}
+div.box2
+{
+background: green;
+width: 200px;
+height: 200px;
+float: left;
+border: black 5px;
+transition: .1s;
+}
+div.box3
+{
+background: blue;
+width: 400px;
+height: 100px;
+clear: both;
+border: black 5px;
+transition: .1s;
+}
