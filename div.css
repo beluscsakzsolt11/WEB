@@ -1,0 +1,26 @@
+.evszak{
+    margin-left: auto;
+    margin-right: auto;
+    width:fit-content;
+}
+.kepek{
+    float: left;
+}
+img{
+    border: 5px solid brown;
+    border-radius: 10%;
+    width: 300px;
+    margin: 30px;
+    transition: 1s;
+}
+img:hover{
+    transform: scale(1.4);
+}
+p{
+    text-align: center;
+    transition: 1s;
+    font-size: large;
+}
+img:hover + p {
+    font-size: xx-large;
+}
