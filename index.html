@@ -1,145 +1,42 @@
 <!DOCTYPE html>
-<html lang="hu">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BZS oldala</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/favicon.png">
+    <title>Háromszög rajzolása</title>
     <style>
-     * {
-  box-sizing: border-box;
-}
- 
-.menu {
-  float: left;
-  width: 20%;
-  text-align: center;
-}
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="a">A oldal hossza:</label>
+      <input type="number" id="a" name="a"><br><br>
+      <label for="b">B oldal hossza:</label>
+      <input type="number" id="b" name="b"><br><br>
+      <input type="button" value="Háromszög rajzolása" onclick="drawTriangle()">
+    </form>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script>
+      function drawTriangle() {
+        
+        let a = parseInt(document.getElementById("a").value);
+        let b = parseInt(document.getElementById("b").value);
 
-.menu a {
-  background-color: darkblue;
-  padding: 8px;
-  margin-top: 7px;
-  display: block;
-  width: 100%;
-  color: black;
-}
+        
+        let c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
 
-.main {
-  float: left;
-  width: 60%;
-  padding: 0 20px;
-}
-
-.right {
-  background-color: #e5e5e5;
-  float: left;
-  width: 20%;
-  padding: 15px;
-  margin-top: 7px;
-  text-align: center;
-}
-
-@media only screen and (max-width: 620px) {
-  /* For mobile phones: */
-  .menu, .main, .right {
-    width: 100%;
-  }
-}
-
-      body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.menu {
-  overflow: hidden;
-  background-color: coral;
-}
-
-
-
-.menu a:hover {
-  background-color: yellowgreen;
-  color: black;
-}
-
-.menu a.active {
-  background-color: #04AA6D;
-  color: cyan;
-}
-
-
-
-
-        .active {
-          background-color: #a408b3;
-        }
-        td,
-        th {
-            border: 1px solid red;
-            width: 100px;
-        }
-
-        table {
-            text-align: center;
-            border: 2px solid black;
-            border-collapse: collapse;
-        }
-          </style>
-
-</head>
-<body>
-  <div style="background-color:red;padding:15px;text-align:center;">
-    <H1>Beluscsák Zsolt</H1>
-  </div>
-
-  <div style="overflow:auto">
-    <div class="menu">
-      <a href="index.html">Főoldal</a> 
-      <a href="lista.html">Listáim</a>
-      <a href="orarend.html">ÓRAREND</a>    
-      <a href="urlap.html">Űrlap</a>    
-      <a href="keplink.html">Képlink feladathoz ugrás</a>
-      <a href="itdoga1.html">IT dolgozat 1</a>
-      <a href="itdoga2.html">IT dolgozat 2</a>
-      <a href="div.html">Évszak feladat</a>
-      <a href="szamologep.html">Számológép feladat</a>
-    </div>
-
-
-<div class="main">
-    <h2>H1-H6 kiírva a nevem:</h2>
-    <h1 style="color:brown">Beluscsák Zsolt</h1>
-    <h2 style="color: aquamarine;">Beluscsák Zsolt</h2>
-    <h3 style="color: blueviolet;">Beluscsák Zsolt</h3>
-    <h4 style="color: coral;">Beluscsák Zsolt</h4>
-    <h5 style="color: seagreen;">Beluscsák Zsolt</h5>
-    <h6 style="color: yellowgreen;">Beluscsák Zsolt</h6>
-
-    <p style="color: darkmagenta;">blablabla <b>blablabla</b> blablabla <i>blablabla</i></p>
-</div>
-
-
-<div class="right">
-  <p>Itt látható a kollázsképem</p>
-<img src="img/kollazs.jpg" alt="BZS kollázs" title="BZS" width="200" height="200"/>
-</div>
-  </div>
-  
-<footer>
-  <p>Author: Beluscsák Zsolt</p>
-            <p><a href="mailto:beluscsakzs@kkszki.hu">beluscsakzs@kkszki.hu</a></p>
-</footer>
-
-
-
-
-
-
-
-
-</body>
+        
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(a, 0);
+        ctx.lineTo(0, b);
+        ctx.lineTo(0, 0);
+        ctx.stroke();
+      }
+    </script>
+  </body>
 </html>
